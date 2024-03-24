@@ -1,0 +1,86 @@
+
+  .main-content-home {
+    margin-top: 10px; 
+
+  }
+
+  .bem-vindo {
+    margin-bottom: 20px;
+  }
+  
+  .bem-vindo h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .bem-vindo p {
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .modulos {
+    border: 1px solid #ddd;
+    padding: 0px;
+  }
+
+  .modulos h3 {
+    font-size: 24px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .modulos ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .modulos li {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .modulos li a {
+    text-decoration: none;
+    color: var(--highligth-text);
+  }
+  
+  .modulos a.card {
+    height: 150px;
+    width: 300px;
+  }
+
+  .modulos a.card:hover {
+    color: var(--second-color);
+    text-decoration: underline;
+    opacity: 90%;
+  }
+
+  .modulos a.card i {
+    font-size: 25px;
+  }
+
+  .modulos li a img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .modulos li h4 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .modulos li p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  

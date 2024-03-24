@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem-vindo ao GRC</title>
+
+
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/main-layout.css">
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+
+</head>
+<body>
+<!-- CABEÇALHO --> 
+  <header>
+
+    <div class="logo-details">
+      <span class="logo-grc">      <img src="../media/GRC.png" alt="Logo GRC" width="38px" height="38px"></span>
+      <span class="txt-logo">Sistema GRC</span>
+      <span class="btn-burguer"><i class="bi bi-list" id="btn-exp"></i></span> 
+    </div>
+
+    <div class="company-logo">
+      <a href="#">
+        <a href="#" class="user-menu">
+        <span class="icon-company-logo icon-company"> <i class="bi bi-buildings"></i></span>
+        <span class="txt-company-logo txt-company">Nome e Logo da Empresa</span>
+        </a>      
+      </a>
+    </div>
+
+    <div class="up-right-details">
+      <a href="#">
+        <a href="#" class="user-menu">
+        <span class="icon-up-right-details icon-user"> <i class="bi bi-person-circle"></i></span>
+        <span class="txt-up-right-details txt-user">Nome Usuário</span>
+        </a>
+        
+        <a href="#" class="config-menu">
+        <span class="icon-up-right-details icon-config"><i class="bi bi-gear-fill"></i></span>
+        </a>
+        
+        <a href="#" class="exit-menu">
+        <span class="icon-up-right-details icon-exit"><i class="bi bi-box-arrow-right"></i></span>
+        <span class="txt-up-right-details txt-exit">Sair</span>
+        </a>
+      
+      </a>
+    </div>
+
+  </header>
+
+<!-- MENU LATERAL --> 
+  <nav class="menu-lateral">
+
+    <ul>
+<!-- ITEM HOME -->
+      <li class="item-menu" id="item-menu-home">
+        <a href="#" class="item-link" onclick="carregarPagina('home')">
+          <span class="icon"><i class="bi bi-house-door"></i></span>
+          <span class="txt-link" >Home</span>
+        </a>
+      </li>
+<!-- ITEM DASHBOARD -->
+      <li class="item-menu" id="item-menu-dashboard">
+        <a href="#" class="item-link" onclick="carregarPagina('dashboard')">
+          <span class="icon"><i class="bi bi-speedometer2"></i></i></span>
+          <span class="txt-link">Dashboard</span>
+        </a>
+      </li>      
+<!-- ITEM APROVAÇÕES -->
+      <li class="item-menu" id="item-menu-aprovacoes">
+        <a href="#" class="item-link" onclick="carregarPagina('aprovacoes')">
+          <span class="icon"><i class="bi bi-check-all"></i></i></span>
+          <span class="txt-link">Aprovações</span>
+        </a>
+      </li>
+<!-- ITEM PROCESSOS -->
+      <li class="item-menu " id="item-menu-processos">
+
+        <a href="#" class="item-link" onclick="carregarPagina('processos')">
+          <span class="icon"><i class="bi bi-diagram-3"></i></span>
+          <span class="txt-link" >Processos</span>
+          <i class="bi bi-caret-right-fill seta-lateral" id="seta-processos"></i>
+        </a>
+        
+        <ul id= "item-sub-menu-geral" class="item-sub-menu-processos">      
+          <li class="item-sub-menu">
+            <a href="#" class="item-sublink">
+              <span class="txt-sublink">Cadastro de Processo</span>
+            </a>
+          </li>
+          <li class="item-sub-menu">
+            <a href="#" class="item-sublink">
+              <span class="txt-sublink">Árvore de Processos</span>
+            </a>
+          </li>
+        </ul>
+
+      </li>
+<!-- ITEM RISCOS -->      
+      <li class="item-menu" id="item-menu-riscos">
+
+        <a href="#" class="item-link" onclick="carregarPagina('riscos')">
+          <span class="icon"><i class="bi bi-exclamation-triangle"></i></span>
+          <span class="txt-link">Riscos</span>
+          <i class="bi bi-caret-right-fill seta-lateral" id="seta-riscos"></i>
+        </a>
+        
+          <ul id= "item-sub-menu-geral" class="item-sub-menu-riscos">
+            <li class="item-sub-menu">
+              <a href="#" class="item-sublink">
+                <span class="txt-sublink">Cadastro de Riscos</span>
+              </a>
+            </li>
+            <li class="item-sub-menu">
+              <a href="#" class="item-sublink">
+                <span class="txt-sublink">Matriz de Riscos</span>
+              </a>
+            </li>
+            <li class="item-sub-menu">
+              <a href="#" class="item-sublink">
+                <span class="txt-sublink">Relatório de Riscos</span>
+              </a>
+            </li>
+            <li class="item-sub-menu">
+              <a href="#" class="item-sublink">
+                <span class="txt-sublink">Heatmaps</span>
+              </a>
+            </li>
+          </ul>
+        
+      </li>
+<!-- ITEM CONTROLES -->  
+      <li class="item-menu" id="item-menu-controles">
+
+        <a href="#" class="item-link" onclick="carregarPagina('controles')">
+          <span class="icon"><i class="bi bi-shield-lock"></i></i></span>
+          <span class="txt-link">Controles</span>
+          <i class="bi bi-caret-right-fill seta-lateral" id="seta-controles"></i>
+        </a>
+
+          <ul id= "item-sub-menu-geral" class="item-sub-menu-controles">
+
+              <li class="item-sub-menu">
+                <a href="#" class="item-sublink">
+                  <span class="txt-sublink">Cadastro de Controles</span>
+                </a>
+              </li>
+              <li class="item-sub-menu">
+                <a href="#" class="item-sublink">
+                  <span class="txt-sublink">Execução de Testes</span>
+                </a>
+              </li>
+              <li class="item-sub-menu">
+                <a href="#"class="item-sublink">
+                  <span class="txt-sublink">Matriz de Controles</span>
+                </a>
+              </li>
+              <li class="item-sub-menu">
+                <a href="#"class="item-sublink">
+                  <span class="txt-sublink">Relatório de Controles</span>
+                </a>
+              </li>
+           </ul>
+
+      </li>
+<!-- ITEM APONTAMENTOS -->        
+      <li class="item-menu" id="item-menu-apontamentos">
+
+        <a href="#"class="item-link" onclick="carregarPagina('apontamentos')">
+          <span class="icon"><i class="bi bi-pencil-square"></i></span>
+          <span class="txt-link">Apontamentos</span>
+          <i class="bi bi-caret-right-fill seta-lateral" id="seta-apontamentos"></i>
+        </a>
+
+            <ul id= "item-sub-menu-geral" class="item-sub-menu-apontamentos">
+              <li class="item-sub-menu">
+                <a href="#"class="item-sublink">
+                  <span class="txt-sublink">Cadastro de Apontamentos</span>
+                </a>
+              </li>
+              <li class="item-sub-menu">
+                <a href="#"class="item-sublink">
+                  <span class="txt-sublink">Tratamento de Apontamentos</span>
+                </a>
+              </li>
+              <li class="item-sub-menu">
+                <a href="#"class="item-sublink">
+                  <span class="txt-sublink">Relatório de Apontamentos</span>
+                </a>
+              </li>
+            </ul>
+
+      </li>
+<!-- ITEM AUDITORIA -->  
+      <li class="item-menu" id="item-menu-auditoria">
+
+        <a href="#"class="item-link" onclick="carregarPagina('auditoria')">
+          <span class="icon"><i class="bi bi-clipboard2-check"></i></span>
+          <span class="txt-link">Auditoria</span>
+          <i class="bi bi-caret-right-fill seta-lateral" id="seta-auditoria"></i>
+        </a>
+
+            <ul id= "item-sub-menu-geral" class="item-sub-menu-auditoria">
+              <li class="item-sub-menu">
+                <a href="#"class="item-sublink">
+                  <span class="txt-sublink">Cadastro de Auditoria</span>
+                </a>
+              </li>
+              <li class="item-sub-menu">
+                <a href="#"class="item-sublink">
+                  <span class="txt-sublink">Execução de Auditoria</span>
+                </a>
+              </li>
+              <li class="item-sub-menu">
+                <a href="#"class="item-sublink">
+                  <span class="txt-sublink">Relatório de Auditoria</span>
+                </a>
+              </li>
+            </ul>
+
+      </li>
+<!-- ITEM COMPLIANCE -->  
+      <li class="item-menu" id="item-menu-compliance">
+
+        <a href="#"class="item-link" onclick="carregarPagina('compliance')">
+          <span class="icon"><i class="bi bi-bookmarks"></i></span>
+          <span class="txt-link">Compliance</span>
+          <i class="bi bi-caret-right-fill seta-lateral" id="seta-compliance"></i>
+        </a>
+
+            <ul id= "item-sub-menu-geral"class="item-sub-menu-compliance">          
+              <li class="item-sub-menu">
+                <a href="#"class="item-sublink">
+                  <span class="txt-sublink">Repositório de Normativos</span>
+                </a>
+              </li>
+              <li class="item-sub-menu">
+                <a href="#"class="item-sublink">
+                  <span class="txt-sublink">Canal de Denúncia</span>
+                </a>
+              </li>
+            </ul>
+      </li>
+    </ul>
+
+  </nav>
+
+<!-- CONTEÚDO PRINCIPAL -->    
+  <main>
+  
+    <div 
+    id="conteudo">
+    </div>
+    
+    <span><i class="bi bi-chat-right-text" id="icone-suporte"></i></span>
+    
+  </main>
+
+  <footer class="footer">
+
+  </footer>
+
+  <script src="../javascript/main-layout.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+/* CABEÇALHO */
+header {
+  background-color: var(--main-color);
+  height: 60px;
+  width:  100%;
+  position: fixed;
+  display: flex;
+}
+
+/* CABEÇALHO LADO ESQUERDO */
+.logo-grc {
+  visibility: hidden;
+  left: 0;
+}
+
+.txt-logo {
+  visibility: hidden;
+  left: 0;
+}
+
+.logo-grc.expandir {
+  visibility: visible;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.txt-logo.expandir {
+  visibility: visible;
+  position: absolute;
+  margin-left: 100px;
+  margin-top: 18px;
+  opacity: 1;
+  color: var(--white-color);
+  font-size: 20px;
+  transition: .5s;
+}
+
+.btn-burguer.expandir {
+  width:  100%;
+  padding-left: 240px;
+  transition: .5s;
+}
+
+.btn-burguer.expandir > i{
+  color: var(--white-color);
+  font-size: 42px;
+  cursor: pointer;
+}
+
+.btn-burguer {
+  position: absolute;
+  transition: .5s;
+  left: 20px;
+}
+
+.btn-burguer > i{
+  color: var(--white-color);
+  font-size: 42px;
+  cursor: pointer;
+}
+
+/* CABEÇALHO MEIO */
+.company-logo {
+  position: fixed;
+  right: 35%;
+  left: 45%;
+  top: 15px
+}
+
+.company-logo a{
+  text-decoration: none;
+  color: var(--white-color);
+  font-size: 15px;
+  padding: 10px 10px 10px 10px 10%;
+  margin-top: 15px;
+  pointer-events: none;
+}
+
+
+/* CABEÇALHO LADO DIREITO */
+.up-right-details {
+  position: fixed;
+  right: 10px;
+  top: 15px
+}
+
+.up-right-details a{
+  text-decoration: none;
+  color: var(--white-color);
+  font-size: 15px;
+  justify-content: flex-end;
+  padding: 10px 10px 10px 10px 10%;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+
+.txt-up-right-details {
+  color: var(--white-color);
+  margin-left: 10px;
+}
+
+.icon-up-right-details {
+  color: var(--white-color);
+  margin-left: 25px;
+  cursor: pointer
+}
+
+.txt-up-right-details:hover {
+  text-decoration: underline;
+  opacity: 90%;
+}
+
+.icon-up-right-details:hover {
+  opacity: 70%;
+}
+
+/* CABEÇALHO LADO DIREITO - OCULTAR NOMES QUANDO TELA MENOR */
+@media screen and (max-width: 650px) {
+  .txt-user {
+    display: none;
+  }
+  .txt-exit {
+    display: none;
+  }
+}
+
+
+/* CORPO - MENU LATERAL */
+nav.menu-lateral {
+  width: 80px;
+  background-color: var(--main-color);
+  padding: 10px 0 10px .2%;
+  box-shadow: 3px 0 0 var(--line-input);
+  position: fixed;
+  top: 60px;
+  bottom: 5px;
+  left: 0;
+  overflow-x: hidden;
+  transition: .5s;
+}
+
+nav.menu-lateral.expandir {
+  width: 300px;
+}
+
+/* CORPO - MENU LATERAL - ITENS */
+ul {
+  height: 100%;
+  list-style-type: none;
+}
+
+.selectLink {
+  background-color: var(--second-color);
+  opacity: 100%;
+}
+
+ul li.item-menu {
+  transition: .5s;
+}
+
+.item-link:hover{
+  background: var(--second-color);
+}
+
+ul li.item-menu a{
+  color: var(--white-color);
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 4%;
+  display: flex;
+  margin-bottom: 10px;
+  line-height: 40px;
+}
+
+ul li.item-menu a .txt-link {
+  margin-left: 70px;
+  transition: .5s;
+  visibility: hidden;
+}
+
+ul li.item-menu a .icon > i {
+  font-size: 30px;
+  margin-left: 20px;
+}
+
+ul li.item-menu a .seta-lateral {
+  font-size: 10px;
+  position: absolute;
+  right: 10px;
+}
+
+nav.menu-lateral.expandir .txt-link {
+  margin-left: 40px;
+  visibility: visible;
+}
+
+
+/* CORPO - MENU LATERAL - SUBITENS */
+
+#item-sub-menu-geral {
+  transition: .5s;
+  display: none;
+}
+
+ul li.item-sub-menu:hover{
+  background: var(--second-color);
+  opacity: 1;
+}
+
+ul li.item-sub-menu a{
+  color: var(--white-color);
+  opacity: 0.8;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 10px 4%;
+  display: block;
+  margin-bottom: 20px;
+  line-height: 40px;
+}
+
+.selectSubLink{
+  background-color: var(--second-color);
+  opacity: 80%;
+}
+
+.txt-sublink {
+  margin-left: 70px;
+  transition: .5s;
+  opacity: 0;
+}
+
+nav.menu-lateral.expandir .txt-sublink {
+  margin-left: 40px;
+  opacity: 1;
+}
+
+
+.menu-lateral::-webkit-scrollbar {
+  width: 5px;
+}
+
+.menu-lateral::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 5px;
+}
+
+.menu-lateral::-webkit-scrollbar-track {
+  background-color: var(--points-list);
+  width: 25px;
+}
+
+/* CORPO CONTEUDO PRINCIPAL */
+main {
+  margin: 0 auto;
+  position: absolute;
+  right: 30px;
+}
+
+#conteudo {
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  right: 30px;
+  bottom: 5px;
+  top: 65px;
+  left: 100px;
+
+  overflow: auto;
+  overflow-x: hidden;
+
+  transition: .5s;
+}
+
+#conteudo.expandir {
+  left: 320px;
+}
+
+#icone-suporte {
+  font-size: 30px;
+  position: fixed;
+  right: 1%;
+  bottom: 1%;
+  color: var(--second-color);
+}
+
+#icone-suporte:hover {
+  opacity: 80%;
+  font-size: 32px;
+}
+/* RODAPÉ */
+
+footer{
+  bottom: 0;
+  background-color: var(--main-color);
+  height: 5px;
+  width:  100%;
+  position: fixed;
+  display: flex;
+}

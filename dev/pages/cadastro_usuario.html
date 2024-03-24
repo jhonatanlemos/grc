@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="..\css\global.css">   
+    <link rel="stylesheet" href="..\css\cadastro_usuario.css" />
+    <title>Cadastro</title>
+</head>
+<body>
+    <div class="container"></div>
+        <div class="container-login">
+            <div class="wrap-login margin-right-75">
+                <form class="login-form" id="login-form">
+                    
+                    <div class="login-form-title margin-top-100 margin-bottom-35"> 
+                    <img src="..\media\GRC-logo-colorida-sem-fundo.png" alt="logo" class="margin-right-75 margin-left-75 image margin-top-35">
+                    <span class="title-text">Cadastre-se</span>
+                    </div>
+
+                    <div class="wrap-input margin-top-20">
+                        <input class="input-form" type="text" name="nome-cadastro" autocomplete="off" id="nome-cadastro"/>
+                        <span class="focus-input-form" data-placeholder = "Nome"></span>                      
+                    </div>
+
+                    <div class="wrap-input margin-top-20">
+                        <input class="input-form" type="email" name="email-cadastro" autocomplete="off" id="email-cadastro"/>
+                        <span class="focus-input-form" data-placeholder = "Email"></span>                      
+                    </div>
+
+                    <div class="wrap-input margin-top-20">
+                        <input class="input-form" type="password" name="password" id="password"/>
+                        <span class="focus-input-form" data-placeholder = "Senha"></span>
+                        <i class="bi bi-eye eye-icon" id="btn-senha" onclick="mostrarSenha()"></i>
+                    </div>
+                    
+                    <div class="wrap-input margin-top-20">
+                        <input class="input-form" type="password" name="password-confirmacao" id="password-confirmacao"/>
+                        <span class="focus-input-form" data-placeholder = "Confirmar Senha"></span>
+                        <i class="bi bi-eye eye-icon" id="btn-senha-confirmacao" onclick="mostrarSenhaConfirm()"></i>
+                    </div>
+
+
+                    <div class="container-login-form-btn">
+                        <button class="create-account-form-btn" type="submit">Cadastrar</button>
+                    </div>
+
+                    <ul class="login-utils">
+                        <li class="margin-top-8 margin-bottom-35">
+                            <span class="text1"> Já tem cadastro? </span>
+                            <a href= "#" class="text2" onclick="FazerLogin()">Fazer login</a>
+                        </li>
+                    </ul>
+
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script> 
+
+    <script src="..\javascript\cadastro_usuario.js"></script>
+
+</body>
+</html>
