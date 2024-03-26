@@ -298,6 +298,8 @@ menuLateral.addEventListener('mouseout', function(){
 // Função para carregar o conteúdo das páginas de forma dinâmica
 
 function carregarPagina(pagina) {
+    let scriptCarregado = false;
+    if (!scriptCarregado){
     fetch(`${pagina}.html`)
     .then(response => {
         if (!response.ok) {
@@ -307,9 +309,15 @@ function carregarPagina(pagina) {
       })
       .then(data => {
         document.getElementById('conteudo').innerHTML = data;
-        console.log('Script de carregamento de pagina com sucesso.');
+        const script = document.createElement('script');
+        script.src = `../javascript/${pagina}.js`;
+        document.body.appendChild(script);
       })
       .catch(error => {
         console.error('Erro:', error);
       });
-  };
+    } else {
+        location.reaload();
+    }
+  };                  
+
