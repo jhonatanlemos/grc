@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
 
-  <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../javascript/dashboard.js" defer ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" ></script>
 
 </head>
 <body>
 
-  <main class="main-content-dashboard">
-   <p>Dashboard</p>
-  </main>
+        <section class="card">
+            <h2>Quantidade de Riscos Mapeados</h2>
+            <canvas id="grafico-riscos-mapeados"></canvas>
+        </section>
+        <section class="card">
+            <h2>Percentual de Processos com Riscos Mapeados</h2>
+            <canvas id="grafico-processos-com-riscos"></canvas>
+        </section>
+        <section class="card">
+            <h2>Índice de Gravidade dos Riscos</h2>
+            <canvas id="grafico-gravidade-dos-riscos"></canvas>
+        </section>
 
-  <script src="../javascript/dashboard.js"></script>
 </body>
 </html>

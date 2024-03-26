@@ -297,20 +297,19 @@ menuLateral.addEventListener('mouseout', function(){
 
 // Função para carregar o conteúdo das páginas de forma dinâmica
 
-console.log('Script carregado com sucesso.');
-
 function carregarPagina(pagina) {
-  fetch(`${pagina}.html`)
-  .then(response => {
-      if (!response.ok) {
-        throw new Error('Erro ao carregar a página.');
-      }
-      return response.text();
-    })
-    .then(data => {
-      document.getElementById('conteudo').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Erro:', error);
-    });
-}
+    fetch(`${pagina}.html`)
+    .then(response => {
+        if (!response.ok) {
+          throw new Error('Erro ao carregar a página.');
+        }
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('conteudo').innerHTML = data;
+        console.log('Script de carregamento de pagina com sucesso.');
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+      });
+  };
