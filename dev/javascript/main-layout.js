@@ -297,27 +297,61 @@ menuLateral.addEventListener('mouseout', function(){
 
 // Função para carregar o conteúdo das páginas de forma dinâmica
 
-function carregarPagina(pagina) {
-    let scriptCarregado = false;
-    if (!scriptCarregado){
-    fetch(`${pagina}.html`)
-    .then(response => {
-        if (!response.ok) {
-          throw new Error('Erro ao carregar a página.');
-        }
-        return response.text();
-      })
-      .then(data => {
-        document.getElementById('conteudo').innerHTML = data;
-        const script = document.createElement('script');
-        script.src = `../javascript/${pagina}.js`;
-        document.body.appendChild(script);
-      })
-      .catch(error => {
-        console.error('Erro:', error);
-      });
-    } else {
-        location.reaload();
-    }
-  };                  
 
+// function carregarPagina(pagina) {
+//     let scriptCarregado = false;
+//     if (!scriptCarregado){
+//     fetch(`${pagina}.html`)
+//     .then(response => {
+//         if (!response.ok) {
+//           throw new Error('Erro ao carregar a página.');
+//         }
+//         return response.text();
+//       })
+//       .then(data => {
+//         document.getElementById('conteudo').innerHTML = data;
+//         const script = document.createElement('script');
+//         script.src = `../javascript/${pagina}.js`;
+//         script.async = true;
+//         document.body.appendChild(script);
+//         scriptCarregado = true;
+//       })
+//       .catch(error => {
+//         console.error('Erro:', error);
+//       });
+//     } else {
+//         location.reaload();
+//     }
+//   };                  
+
+
+// Função auto-invocada para encapsular o código e manter o estado privado
+(function() {
+    let scriptCarregado = false;
+
+    // Função para carregar a página
+    window.carregarPagina = function(pagina) {
+        if (!scriptCarregado){
+            fetch(`${pagina}.html`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar a página.');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('conteudo').innerHTML = data;
+                const script = document.createElement('script');
+                script.src = `../javascript/${pagina}.js`;
+                script.async = true;
+                document.body.appendChild(script);
+                scriptCarregado = true;
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+        } else {
+            location.reload();
+        }
+    };
+})();
